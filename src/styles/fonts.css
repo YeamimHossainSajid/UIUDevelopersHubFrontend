@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Tamzen';
+  src: url('/fonts/Tamzen10x20r.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tamzen';
+  src: url('/fonts/Tamzen10x20b.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
