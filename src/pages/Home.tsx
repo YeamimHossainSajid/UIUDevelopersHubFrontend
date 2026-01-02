@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useSound } from '@/contexts/SoundContext'
 import Real3DText from '@/components/Real3DText'
-import { ArrowRight, Users, Video, CheckSquare, Shield, Sparkles, Rocket, Code } from 'lucide-react'
+import FloatingTech from '@/components/FloatingTech'
+import { ArrowRight, Users, Video, CheckSquare, Shield, Sparkles, Rocket, Code, Terminal } from 'lucide-react'
 
 export default function Home() {
   const { playKeyClick, playFeatureSound } = useSound()
@@ -54,6 +55,9 @@ export default function Home() {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-orange/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
+        {/* Floating Tech Items */}
+        <FloatingTech />
+
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <div className="mb-6 inline-block">
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -62,16 +66,31 @@ export default function Home() {
             </div>
           </div>
           
+          {/* Programming-themed Title */}
           <div className="mb-8">
-            <Real3DText className="text-5xl md:text-7xl lg:text-9xl font-bold">
+            <div className="flex items-center gap-2 mb-2 justify-center">
+              <Terminal className="text-accent-orange" size={24} />
+              <span className="text-text-light font-mono text-sm">const</span>
+              <span className="text-accent-blue font-mono text-sm">hub</span>
+              <span className="text-text-light font-mono text-sm">=</span>
+            </div>
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-mono mb-2">
+              <span className="text-accent-orange">"</span>
               <span className="bg-gradient-to-r from-accent-orange via-accent-orange-gold to-accent-blue bg-clip-text text-transparent">
                 UIU DEVELOPERS
               </span>
-              <br />
+              <span className="text-accent-orange">"</span>
+            </div>
+            <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-mono">
+              <span className="text-accent-orange">"</span>
               <span className="bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink bg-clip-text text-transparent">
                 HUB
               </span>
-            </Real3DText>
+              <span className="text-accent-orange">"</span>
+            </div>
+            <div className="flex items-center gap-2 mt-2 justify-center">
+              <span className="text-text-light font-mono text-sm">;</span>
+            </div>
           </div>
           
           <p className="text-2xl md:text-3xl text-text-medium mb-4 font-semibold">
@@ -101,7 +120,7 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
           <div className="w-6 h-10 border-2 border-accent-blue rounded-full flex justify-center">
             <div className="w-1 h-3 bg-accent-blue rounded-full mt-2"></div>
           </div>
