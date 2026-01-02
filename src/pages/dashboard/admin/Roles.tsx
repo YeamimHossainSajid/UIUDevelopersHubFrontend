@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import { useSound } from '@/contexts/SoundContext'
-import { Shield, Search, UserPlus } from 'lucide-react'
+import { Shield, Search } from 'lucide-react'
 
 // Mock users - replace with actual data from Firebase
-const mockUsers = [
+const mockUsers: Array<{
+  id: string
+  name: string
+  email: string
+  role: 'member' | 'moderator' | 'admin' | 'super_admin'
+}> = [
   {
     id: '1',
     name: 'John Doe',
     email: 'john@example.com',
-    role: 'member' as const,
+    role: 'member',
   },
   {
     id: '2',
     name: 'Jane Smith',
     email: 'jane@example.com',
-    role: 'admin' as const,
+    role: 'admin',
   },
 ]
 

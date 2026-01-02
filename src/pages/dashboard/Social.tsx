@@ -17,7 +17,6 @@ const mockPosts = [
 ]
 
 export default function Social() {
-  const { user } = useAuth()
   const { playKeyClick } = useSound()
   const [posts, setPosts] = useState(mockPosts)
   const [filter, setFilter] = useState<'all' | 'following' | 'trending' | 'my_posts'>('all')

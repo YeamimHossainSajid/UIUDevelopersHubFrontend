@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { User, UserRole } from '@/types'
+import { User } from '@/types'
 import { auth } from '@/config/firebase'
 
 interface AuthContextType {
@@ -46,7 +46,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return unsubscribe
   }, [])
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (email: string, _password: string) => {
     // TODO: Implement Firebase sign in
     // For now, create a mock user for development
     console.log('Sign in:', email)
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     })
   }
 
-  const signUp = async (email: string, password: string, name: string) => {
+  const signUp = async (email: string, _password: string, name: string) => {
     // TODO: Implement Firebase sign up
     // For now, create a mock user for development
     console.log('Sign up:', email, name)
@@ -79,7 +79,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null)
   }
 
-  const updateUser = async (updates: Partial<User>) => {
+  const updateUser = async (_updates: Partial<User>) => {
     // TODO: Implement user update
     throw new Error('Not implemented')
   }

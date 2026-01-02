@@ -21,7 +21,7 @@ function getAudioContext(): AudioContext {
 }
 
 function playSound(
-  frequency: number,
+  _frequency: number,
   type: OscillatorType,
   duration: number,
   attack: number,
@@ -30,8 +30,8 @@ function playSound(
   release: number,
   startFreq: number,
   endFreq: number,
-  volume: number,
-  harmonics: number,
+  _volume: number,
+  _harmonics: number,
   gain: number
 ) {
   try {

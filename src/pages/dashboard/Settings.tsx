@@ -3,7 +3,7 @@ import { useSound } from '@/contexts/SoundContext'
 import { Bell, Volume2, Moon } from 'lucide-react'
 
 export default function Settings() {
-  const { enabled, toggleSound } = useSound()
+  const { enabled, toggleSound, playKeyClick } = useSound()
   const [notifications, setNotifications] = useState(true)
   const [theme, setTheme] = useState('dark')
 

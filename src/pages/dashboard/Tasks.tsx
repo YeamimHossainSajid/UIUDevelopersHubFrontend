@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useSound } from '@/contexts/SoundContext'
-import { Plus, Filter, Search, List, LayoutGrid, Calendar } from 'lucide-react'
+import { Plus, Filter, List, LayoutGrid, Calendar } from 'lucide-react'
 
 // Mock tasks - replace with actual data from Firebase
 const mockTasks = [
