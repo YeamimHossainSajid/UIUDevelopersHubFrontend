@@ -50,53 +50,53 @@ export default function SignUp() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Real3DText className="text-4xl font-bold mb-2">Sign Up</Real3DText>
-          <p className="text-gray-400">Join UIU Developers Hub today</p>
+          <p className="text-text-medium">Join UIU Developers Hub today</p>
         </div>
 
         <div className="card">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
+              <label htmlFor="name" className="block text-sm font-medium mb-2 text-text-dark">
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
                 <input
                   type="text"
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                   placeholder="John Doe"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="block text-sm font-medium mb-2 text-text-dark">
                 Email
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
                 <input
                   type="email"
                   id="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                   placeholder="your.email@example.com"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium mb-2">
+              <label htmlFor="password" className="block text-sm font-medium mb-2 text-text-dark">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
                 <input
                   type="password"
                   id="password"
@@ -104,31 +104,33 @@ export default function SignUp() {
                   onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                   required
                   minLength={6}
-                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                   placeholder="••••••••"
+                  style={{ color: '#2d2d2d', WebkitTextFillColor: '#2d2d2d' }}
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium mb-2 text-text-dark">
                 Confirm Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
                 <input
                   type="password"
                   id="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                   required
-                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full pl-10 pr-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                   placeholder="••••••••"
+                  style={{ color: '#2d2d2d', WebkitTextFillColor: '#2d2d2d' }}
                 />
               </div>
             </div>
 
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-text-medium">
               By signing up, you agree to our{' '}
               <Link to="/terms" className="text-accent-blue hover:underline" onClick={playKeyClick}>
                 Terms of Service
@@ -157,7 +159,7 @@ export default function SignUp() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-text-medium">
               Already have an account?{' '}
               <Link to="/auth/signin" className="text-accent-blue hover:underline" onClick={playKeyClick}>
                 Sign in

@@ -53,7 +53,7 @@ export default function Events() {
                 className={`px-6 py-2 rounded-lg font-medium transition-all ${
                   filter === type
                     ? 'bg-accent-orange text-white'
-                    : 'bg-primary-navy/50 text-gray-300 hover:bg-accent-blue/20'
+                    : 'bg-white/80 text-text-medium hover:bg-accent-blue/20 border border-accent-blue/20'
                 }`}
               >
                 {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -78,13 +78,13 @@ export default function Events() {
                   />
                 </div>
               )}
-              <div className="flex items-center space-x-2 text-sm text-gray-400 mb-2">
+              <div className="flex items-center space-x-2 text-sm text-text-medium mb-2">
                 <Calendar size={16} />
                 <span>{event.date.toLocaleDateString()}</span>
               </div>
-              <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-              <p className="text-gray-300 text-sm mb-4">{event.description}</p>
-              <div className="flex items-center space-x-2 text-sm text-gray-400 mb-4">
+              <h3 className="text-xl font-bold mb-2 text-text-dark">{event.title}</h3>
+              <p className="text-text-medium text-sm mb-4">{event.description}</p>
+              <div className="flex items-center space-x-2 text-sm text-text-medium mb-4">
                 <MapPin size={16} />
                 <span>{event.location}</span>
               </div>
@@ -98,7 +98,7 @@ export default function Events() {
 
         {filteredEvents.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">No events found for this filter.</p>
+            <p className="text-text-medium text-lg">No events found for this filter.</p>
           </div>
         )}
       </section>

@@ -44,19 +44,19 @@ export default function CustomCursor() {
           position: fixed;
           width: 8px;
           height: 8px;
-          background: #569cd6;
+          background: #7db3d3;
           border-radius: 50%;
           pointer-events: none;
           z-index: 9999;
           transform: translate(-50%, -50%);
           transition: transform 0.1s ease-out;
-          box-shadow: 0 0 10px rgba(86, 156, 214, 0.8);
+          box-shadow: 0 0 10px rgba(125, 179, 211, 0.6);
         }
         .custom-cursor-ring {
           position: fixed;
           width: 32px;
           height: 32px;
-          border: 2px solid rgba(86, 156, 214, 0.5);
+          border: 2px solid rgba(125, 179, 211, 0.4);
           border-radius: 50%;
           pointer-events: none;
           z-index: 9998;
@@ -66,13 +66,13 @@ export default function CustomCursor() {
         .custom-cursor-ring.hovering {
           width: 48px;
           height: 48px;
-          border-color: rgba(255, 107, 53, 0.8);
+          border-color: rgba(255, 140, 105, 0.6);
         }
         .custom-cursor-trail {
           position: fixed;
           width: 4px;
           height: 4px;
-          background: rgba(255, 107, 53, 0.6);
+          background: rgba(255, 140, 105, 0.5);
           border-radius: 50%;
           pointer-events: none;
           z-index: 9997;

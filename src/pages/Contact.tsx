@@ -63,7 +63,7 @@ export default function Contact() {
 
             <div className="card">
               <h3 className="text-xl font-bold mb-4 text-glow-orange">Response Time</h3>
-              <p className="text-gray-300">
+              <p className="text-text-medium">
                 We typically respond within 24-48 hours. For urgent matters, please reach out
                 via Discord.
               </p>
@@ -75,7 +75,7 @@ export default function Contact() {
             <h3 className="text-xl font-bold mb-4 text-glow-orange">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-text-dark">
                   Name
                 </label>
                 <input
@@ -84,11 +84,11 @@ export default function Contact() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full px-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-text-dark">
                   Email
                 </label>
                 <input
@@ -97,11 +97,11 @@ export default function Contact() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full px-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium mb-2 text-text-dark">
                   Subject
                 </label>
                 <input
@@ -110,11 +110,11 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   required
-                  className="w-full px-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue"
+                  className="w-full px-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-text-dark">
                   Message
                 </label>
                 <textarea
@@ -123,7 +123,7 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white focus:outline-none focus:border-accent-blue resize-none"
+                  className="w-full px-4 py-2 rounded-lg bg-white border border-accent-blue/30 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20 resize-none"
                 />
               </div>
               <button

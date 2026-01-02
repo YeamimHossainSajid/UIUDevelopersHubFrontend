@@ -24,7 +24,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary-dark/90 backdrop-blur-xl border-b border-accent-blue/30">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-accent-blue/20 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link to="/" onClick={handleClick} className="text-2xl font-bold text-glow-orange">
@@ -60,7 +60,7 @@ export default function Navigation() {
               setMobileMenuOpen(!mobileMenuOpen)
               playKeyClick()
             }}
-            className="md:hidden p-2 rounded-lg hover:bg-accent-blue/20"
+            className="md:hidden p-2 rounded-lg hover:bg-accent-blue/10 text-text-dark"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

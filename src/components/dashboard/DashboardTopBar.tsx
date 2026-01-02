@@ -17,15 +17,15 @@ export default function DashboardTopBar() {
   }
 
   return (
-    <header className="h-16 bg-primary-navy/80 backdrop-blur-xl border-b border-accent-blue/30 flex items-center justify-between px-6">
+    <header className="h-16 bg-white/90 backdrop-blur-xl border-b border-accent-blue/20 shadow-sm flex items-center justify-between px-6">
       {/* Search */}
       <div className="flex-1 max-w-md">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
           <input
             type="text"
             placeholder="Search..."
-            className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-dark/50 border border-accent-blue/30 text-white placeholder-gray-400 focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
+            className="w-full pl-10 pr-4 py-2 rounded-lg bg-primary-light/50 border border-accent-blue/20 text-text-dark placeholder-text-light focus:outline-none focus:border-accent-blue focus:ring-2 focus:ring-accent-blue/20"
           />
         </div>
       </div>
@@ -58,10 +58,10 @@ export default function DashboardTopBar() {
           </button>
 
           {showUserMenu && (
-            <div className="absolute right-0 mt-2 w-48 bg-primary-navy/95 backdrop-blur-xl border border-accent-blue/30 rounded-lg shadow-lg overflow-hidden">
-              <div className="px-4 py-3 border-b border-accent-blue/30">
-                <p className="text-sm font-medium">{user?.name || 'User'}</p>
-                <p className="text-xs text-gray-400">{user?.email}</p>
+            <div           className="absolute right-0 mt-2 w-48 bg-white/95 backdrop-blur-xl border border-accent-blue/20 rounded-lg shadow-lg overflow-hidden">
+              <div className="px-4 py-3 border-b border-accent-blue/20">
+                <p className="text-sm font-medium text-text-dark">{user?.name || 'User'}</p>
+                <p className="text-xs text-text-medium">{user?.email}</p>
                 <p className="text-xs text-accent-orange mt-1 capitalize">{user?.role}</p>
               </div>
               <button

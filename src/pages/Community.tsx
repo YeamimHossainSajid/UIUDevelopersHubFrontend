@@ -48,11 +48,11 @@ export default function Community() {
                   }}
                 />
               </div>
-              <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+              <h3 className="text-xl font-bold mb-1 text-text-dark">{member.name}</h3>
               <p className="text-accent-orange mb-3">{member.role}</p>
-              <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
+              <p className="text-text-medium text-sm mb-4">{member.bio}</p>
               <div className="flex justify-center space-x-4">
-                <a href="#" className="text-gray-400 hover:text-accent-blue transition-colors">
+                <a href="#" className="text-text-light hover:text-accent-blue transition-colors">
                   <Github size={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-accent-blue transition-colors">
@@ -70,22 +70,22 @@ export default function Community() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="card text-center">
             <div className="text-4xl font-bold text-glow-orange mb-2">100+</div>
-            <div className="text-gray-400">Active Members</div>
+            <div className="text-text-medium">Active Members</div>
           </div>
           <div className="card text-center">
             <div className="text-4xl font-bold text-glow-orange mb-2">50+</div>
-            <div className="text-gray-400">Projects</div>
+            <div className="text-text-medium">Projects</div>
           </div>
           <div className="card text-center">
             <div className="text-4xl font-bold text-glow-orange mb-2">20+</div>
-            <div className="text-gray-400">Events Hosted</div>
+            <div className="text-text-medium">Events Hosted</div>
           </div>
         </div>
 
         {/* Join CTA */}
         <div className="card text-center max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-4 text-glow-orange">Join Our Community</h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-text-medium mb-6">
             Become part of a vibrant community of developers working together to build amazing things.
           </p>
           <a href="/auth/signup" className="btn-primary inline-block">

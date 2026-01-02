@@ -8,19 +8,26 @@ export default {
     extend: {
       colors: {
         primary: {
-          dark: '#1a1a2e',
-          navy: '#16213e',
-          blue: '#0f3460',
+          light: '#f0f0f0',
+          soft: '#f8f8f8',
+          cream: '#fafafa',
         },
         accent: {
-          orange: '#ff6b35',
-          'orange-gold': '#f7931e',
-          blue: '#569cd6',
-          red: '#ff4500',
+          orange: '#ff8c69',
+          'orange-gold': '#ffb347',
+          blue: '#7db3d3',
+          purple: '#b19cd9',
+          pink: '#ffb6c1',
+          green: '#98d8c8',
+        },
+        text: {
+          dark: '#2d2d2d',
+          medium: '#4a4a4a',
+          light: '#6b6b6b',
         },
       },
       fontFamily: {
-        tamzen: ['Tamzen', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
+        playful: ['Fredoka', 'Nunito', 'Comic Neue', 'system-ui', 'sans-serif'],
       },
       animation: {
         'background-shift': 'backgroundShift 20s ease-in-out infinite',

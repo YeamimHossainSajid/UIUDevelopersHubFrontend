@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useSound } from '@/contexts/SoundContext'
 import Real3DText from '@/components/Real3DText'
-import { ArrowRight, Users, Video, CheckSquare, Shield } from 'lucide-react'
+import { ArrowRight, Users, Video, CheckSquare, Shield, Sparkles, Rocket, Code } from 'lucide-react'
 
 export default function Home() {
   const { playKeyClick, playFeatureSound } = useSound()
@@ -10,27 +10,38 @@ export default function Home() {
     {
       icon: Users,
       title: 'Social Platform',
-      description: 'Connect with developers, share ideas, and build together.',
-      color: '#569cd6',
+      description: 'Connect with developers, share ideas, and build amazing projects together.',
+      color: '#7db3d3',
+      gradient: 'from-blue-400 to-blue-600',
     },
     {
       icon: Video,
       title: 'Video Meetings',
-      description: 'Schedule and join video conferences with your team.',
-      color: '#ff6b35',
+      description: 'Schedule and join video conferences with your team seamlessly.',
+      color: '#ff8c69',
+      gradient: 'from-orange-400 to-orange-600',
     },
     {
       icon: CheckSquare,
       title: 'Task Management',
-      description: 'Organize projects with Kanban boards and task tracking.',
-      color: '#f7931e',
+      description: 'Organize projects with intuitive Kanban boards and task tracking.',
+      color: '#ffb347',
+      gradient: 'from-yellow-400 to-yellow-600',
     },
     {
       icon: Shield,
       title: 'Role Management',
-      description: 'Flexible role system for team organization.',
-      color: '#ff4500',
+      description: 'Flexible role system for efficient team organization.',
+      color: '#b19cd9',
+      gradient: 'from-purple-400 to-purple-600',
     },
+  ]
+
+  const stats = [
+    { number: '100+', label: 'Active Members', icon: Users },
+    { number: '50+', label: 'Projects', icon: Code },
+    { number: '20+', label: 'Events', icon: Sparkles },
+    { number: '10+', label: 'Partners', icon: Rocket },
   ]
 
   return (
@@ -38,26 +49,46 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark via-primary-navy to-primary-blue"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-light via-primary-soft to-primary-cream"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-orange/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <div className="mb-6 inline-block">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Rocket className="text-accent-orange animate-bounce" size={32} />
+              <span className="text-accent-orange font-bold text-lg">Welcome to</span>
+            </div>
+          </div>
+          
           <div className="mb-8">
-            <Real3DText className="text-5xl md:text-7xl lg:text-9xl font-bold text-white">
-              UIU DEVELOPERS HUB
+            <Real3DText className="text-5xl md:text-7xl lg:text-9xl font-bold">
+              <span className="bg-gradient-to-r from-accent-orange via-accent-orange-gold to-accent-blue bg-clip-text text-transparent">
+                UIU DEVELOPERS
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-accent-blue via-accent-purple to-accent-pink bg-clip-text text-transparent">
+                HUB
+              </span>
             </Real3DText>
           </div>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          
+          <p className="text-2xl md:text-3xl text-text-medium mb-4 font-semibold">
             Empowering Developers, Building Communities
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <p className="text-lg md:text-xl text-text-light mb-12 max-w-2xl mx-auto">
+            Join a vibrant community of developers, collaborate on projects, and grow together in a fun and engaging environment.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/auth/signup"
               onClick={playKeyClick}
-              className="btn-primary inline-flex items-center justify-center space-x-2"
+              className="btn-primary inline-flex items-center justify-center space-x-2 group"
             >
-              <span>Join Us</span>
-              <ArrowRight size={20} />
+              <span>Join Us Now</span>
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/about"
@@ -77,6 +108,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="section-container bg-white/50">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon
+            return (
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent-blue/20 hover:border-accent-orange/40 transition-all hover:scale-105"
+              >
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-orange/20">
+                    <Icon className="text-accent-orange" size={28} />
+                  </div>
+                </div>
+                <div className="text-4xl font-bold text-glow-orange mb-2">{stat.number}</div>
+                <div className="text-text-medium font-medium">{stat.label}</div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
       {/* About Section */}
       <section className="section-container">
         <div className="section-header">
@@ -86,21 +140,36 @@ export default function Home() {
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="card text-center">
-            <h3 className="text-2xl font-bold mb-2 text-glow-orange">Mission</h3>
-            <p className="text-gray-300">
+          <div className="card text-center hover:scale-105 transition-transform">
+            <div className="mb-4">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center">
+                <Rocket className="text-white" size={32} />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-glow-orange">Mission</h3>
+            <p className="text-text-medium leading-relaxed">
               To empower developers through collaboration, knowledge sharing, and community building.
             </p>
           </div>
-          <div className="card text-center">
-            <h3 className="text-2xl font-bold mb-2 text-glow-orange">Vision</h3>
-            <p className="text-gray-300">
+          <div className="card text-center hover:scale-105 transition-transform">
+            <div className="mb-4">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange to-accent-orange-gold flex items-center justify-center">
+                <Sparkles className="text-white" size={32} />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-glow-orange">Vision</h3>
+            <p className="text-text-medium leading-relaxed">
               To become the leading developer community platform at UIU and beyond.
             </p>
           </div>
-          <div className="card text-center">
-            <h3 className="text-2xl font-bold mb-2 text-glow-orange">Values</h3>
-            <p className="text-gray-300">
+          <div className="card text-center hover:scale-105 transition-transform">
+            <div className="mb-4">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-purple to-accent-pink flex items-center justify-center">
+                <Code className="text-white" size={32} />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-glow-orange">Values</h3>
+            <p className="text-text-medium leading-relaxed">
               Innovation, collaboration, inclusivity, and continuous learning.
             </p>
           </div>
@@ -108,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="section-container bg-primary-navy/30">
+      <section className="section-container bg-white/30">
         <div className="section-header">
           <h2 className="section-title">Platform Features</h2>
           <p className="section-subtitle">
@@ -121,22 +190,18 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className="card cursor-pointer"
+                className="card cursor-pointer group"
                 onMouseEnter={() => playFeatureSound(440 + index * 50)}
                 onClick={playKeyClick}
               >
                 <div className="flex flex-col items-center text-center">
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
-                    style={{
-                      background: `linear-gradient(135deg, ${feature.color}20, ${feature.color}40)`,
-                      border: `2px solid ${feature.color}`,
-                    }}
+                    className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}
                   >
-                    <Icon size={32} style={{ color: feature.color }} />
+                    <Icon className="text-white" size={40} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-300 text-sm">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-text-dark">{feature.title}</h3>
+                  <p className="text-text-medium text-sm leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             )
@@ -144,46 +209,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-container">
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-glow-orange mb-2">100+</div>
-            <div className="text-gray-400">Active Members</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-glow-orange mb-2">50+</div>
-            <div className="text-gray-400">Projects</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-glow-orange mb-2">20+</div>
-            <div className="text-gray-400">Events</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-glow-orange mb-2">10+</div>
-            <div className="text-gray-400">Partners</div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="section-container bg-primary-navy/30">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-glow">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join our community and start collaborating with fellow developers today.
+      <section className="section-container bg-gradient-to-br from-accent-blue/10 via-accent-orange/10 to-accent-purple/10">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="mb-6">
+            <Sparkles className="text-accent-orange mx-auto mb-4" size={48} />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-glow-orange">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-text-medium mb-8 leading-relaxed">
+            Join our community and start collaborating with fellow developers today. 
+            Build amazing projects, learn new skills, and grow together!
           </p>
           <Link
             to="/auth/signup"
             onClick={playKeyClick}
-            className="btn-primary inline-flex items-center space-x-2"
+            className="btn-primary inline-flex items-center space-x-2 group"
           >
             <span>Sign Up Now</span>
-            <ArrowRight size={20} />
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </section>
     </div>
   )
 }
-

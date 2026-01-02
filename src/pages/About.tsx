@@ -14,7 +14,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-glow-orange">Our Story</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-text-medium leading-relaxed">
               UIU Developers Hub was founded with a vision to create a collaborative space
               where developers at UIU can come together to share knowledge, work on projects,
               and build meaningful connections. We believe in the power of community-driven
@@ -24,7 +24,7 @@ export default function About() {
 
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-glow-orange">Mission</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-text-medium leading-relaxed">
               Our mission is to foster a culture of innovation, collaboration, and continuous
               learning within the UIU developer community. We aim to provide a platform that
               enables developers to connect, collaborate, and create amazing projects together.
@@ -33,7 +33,7 @@ export default function About() {
 
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-glow-orange">What We Offer</h2>
-            <ul className="space-y-4 text-gray-300">
+            <ul className="space-y-4 text-text-medium">
               <li className="flex items-start">
                 <span className="text-accent-orange mr-3">•</span>
                 <span>
@@ -67,7 +67,7 @@ export default function About() {
 
           <div className="card">
             <h2 className="text-3xl font-bold mb-4 text-glow-orange">Join Us</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-text-medium leading-relaxed">
               Whether you're a beginner just starting your coding journey or an experienced
               developer looking to collaborate, UIU Developers Hub welcomes you. Join our
               community and be part of something amazing.
