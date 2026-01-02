@@ -1,6 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { User } from '@/types'
-import { auth } from '@/config/firebase'
 
 interface AuthContextType {
   user: User | null
@@ -18,32 +17,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Listen for auth state changes
-    // TODO: Implement Firebase auth state listener
-    if (!auth) {
-      setLoading(false)
-      return
-    }
-
-    // @ts-ignore - Firebase auth will be available after package installation
-    const unsubscribe = auth.onAuthStateChanged(async (firebaseUser: any) => {
-      if (firebaseUser) {
-        // TODO: Fetch user data from Firestore
-        setUser({
-          id: firebaseUser.uid,
-          email: firebaseUser.email || '',
-          name: firebaseUser.displayName || 'User',
-          role: 'member',
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        })
-      } else {
-        setUser(null)
-      }
-      setLoading(false)
-    })
-
-    return unsubscribe
+    // Frontend-only mode - no Firebase auth listener
+    // Backend integration will be added later
+    setLoading(false)
   }, [])
 
   const signIn = async (email: string, _password: string) => {
