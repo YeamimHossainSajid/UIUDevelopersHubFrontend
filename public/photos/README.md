@@ -30,3 +30,4 @@ If you have a photo for Sajid, name it: `sajid.jpg`
 
 The application will automatically load photos from this folder using the path: `/photos/[name].jpg`
 
+
