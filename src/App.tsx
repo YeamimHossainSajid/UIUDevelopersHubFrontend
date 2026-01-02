@@ -17,6 +17,7 @@ import SignUp from './pages/auth/SignUp'
 import Dashboard from './pages/dashboard/Dashboard'
 import DashboardHome from './pages/dashboard/DashboardHome'
 import Social from './pages/dashboard/Social'
+import Messages from './pages/dashboard/Messages'
 import Meetings from './pages/dashboard/Meetings'
 import Tasks from './pages/dashboard/Tasks'
 import Profile from './pages/dashboard/Profile'
@@ -56,6 +57,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<DashboardHome />} />
               <Route path="social" element={<Social />} />
+              <Route path="messages" element={<Messages />} />
               <Route path="meetings" element={<Meetings />} />
               <Route path="tasks" element={<Tasks />} />
               <Route path="profile" element={<Profile />} />

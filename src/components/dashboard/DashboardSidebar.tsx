@@ -4,6 +4,7 @@ import { useSound } from '@/contexts/SoundContext'
 import {
   LayoutDashboard,
   Users,
+  MessageCircle,
   Video,
   CheckSquare,
   User,
@@ -23,6 +24,7 @@ export default function DashboardSidebar() {
   const menuItems = [
     { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { path: '/dashboard/social', label: 'Social', icon: Users },
+    { path: '/dashboard/messages', label: 'Messages', icon: MessageCircle },
     { path: '/dashboard/meetings', label: 'Meetings', icon: Video },
     { path: '/dashboard/tasks', label: 'Tasks', icon: CheckSquare },
     { path: '/dashboard/profile', label: 'Profile', icon: User },
