@@ -58,16 +58,16 @@ export default function Home() {
         {/* Floating Tech Items */}
         <FloatingTech />
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <div className="mb-6 inline-block">
-            <div className="flex items-center justify-center gap-2 mb-4">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto -mt-32 md:-mt-40">
+          <div className="mb-4 inline-block">
+            <div className="flex items-center justify-center gap-2 mb-3">
               <Rocket className="text-accent-orange animate-bounce" size={32} />
               <span className="text-accent-orange font-bold text-lg">Welcome to</span>
             </div>
           </div>
           
           {/* Programming-themed Title */}
-          <div className="mb-8">
+          <div className="mb-6">
             <div className="flex items-center gap-2 mb-2 justify-center">
               <Terminal className="text-accent-orange" size={24} />
               <span className="text-text-light font-mono text-sm">const</span>
@@ -93,10 +93,10 @@ export default function Home() {
             </div>
           </div>
           
-          <p className="text-2xl md:text-3xl text-text-medium mb-4 font-semibold">
+          <p className="text-xl md:text-2xl text-text-medium mb-3 font-semibold">
             Empowering Developers, Building Communities
           </p>
-          <p className="text-lg md:text-xl text-text-light mb-12 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-text-light mb-10 max-w-2xl mx-auto">
             Join a vibrant community of developers, collaborate on projects, and grow together in a fun and engaging environment.
           </p>
           
