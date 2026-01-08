@@ -78,7 +78,36 @@ export function SoundProvider({ children }: { children: ReactNode }) {
 
   const playKeyClick = () => {
     if (!enabled) return
-    playSound(1200, 'square', 0.05, 0.005, 0.02, 0.05, 0.05, 1200, 800, 2000, 10, 0.4)
+    // Soft, pleasant button click sound - like a gentle tap
+    // Using a very gentle sine wave with low volume and smooth fade
+    try {
+      const ctx = getAudioContext()
+      const now = ctx.currentTime
+      
+      // Create a soft, pleasant tone using sine wave
+      const oscillator = ctx.createOscillator()
+      const gainNode = ctx.createGain()
+      
+      // Very gentle frequency (pleasant mid-range)
+      oscillator.type = 'sine'
+      oscillator.frequency.setValueAtTime(600, now)
+      oscillator.frequency.exponentialRampToValueAtTime(550, now + 0.06)
+      
+      // Very soft volume with smooth envelope
+      gainNode.gain.setValueAtTime(0, now)
+      gainNode.gain.linearRampToValueAtTime(0.08, now + 0.005) // Quick, gentle attack
+      gainNode.gain.linearRampToValueAtTime(0.05, now + 0.03)  // Gentle decay
+      gainNode.gain.linearRampToValueAtTime(0, now + 0.06)      // Smooth release
+      
+      oscillator.connect(gainNode)
+      gainNode.connect(ctx.destination)
+      
+      oscillator.start(now)
+      oscillator.stop(now + 0.06)
+    } catch (error) {
+      // Silently fail if audio context is not available
+      console.warn('Audio context not available:', error)
+    }
   }
 
   const playFeatureSound = (frequency = 440) => {
