@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useSound } from '@/contexts/SoundContext'
 import Real3DText from '@/components/Real3DText'
 import FloatingTech from '@/components/FloatingTech'
-import { ArrowRight, Users, Video, CheckSquare, Shield, Sparkles, Rocket, Code, Terminal } from 'lucide-react'
+import { ArrowRight, Users, Video, CheckSquare, Shield, Sparkles, Rocket, Code, Terminal, Briefcase, GraduationCap, Trophy, Award, Building2, Handshake, Camera, ExternalLink, Github, Globe, Star, TrendingUp, BookOpen, Target, Zap, Heart } from 'lucide-react'
 
 export default function Home() {
   const { playKeyClick, playFeatureSound } = useSound()
@@ -150,8 +150,271 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* What is UIU DevHub Section */}
       <section className="section-container">
+        <div className="section-header">
+          <h2 className="section-title">What is UIU DevHub?</h2>
+          <p className="section-subtitle">
+            A comprehensive platform connecting developers, companies, and opportunities
+          </p>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="card p-8 bg-gradient-to-br from-accent-blue/10 via-accent-purple/10 to-accent-pink/10 border-2 border-accent-blue/30">
+            <p className="text-lg text-text-dark leading-relaxed text-center">
+              UIU DevHub is a vibrant ecosystem designed to bridge the gap between talented developers at UIU and real-world opportunities. 
+              We provide a platform where developers can showcase their skills, collaborate on projects, find internships and jobs, 
+              and build meaningful connections with companies and investors. Whether you're a student looking to grow, a company seeking 
+              top talent, or an investor looking for innovative projects, DevHub is your gateway to success.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join DevHub - For Developers */}
+      <section className="section-container bg-white/30">
+        <div className="section-header">
+          <h2 className="section-title">Why Join DevHub?</h2>
+          <p className="section-subtitle">
+            Unlock your potential and accelerate your developer journey
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { icon: Briefcase, title: 'Real-world Projects', desc: 'Work on actual projects that matter' },
+            { icon: GraduationCap, title: 'Internship & Jobs', desc: 'Access exclusive opportunities' },
+            { icon: Users, title: 'Team Collaboration', desc: 'Skill-based team matching' },
+            { icon: Rocket, title: 'Mentorship', desc: 'Learn from seniors and alumni' },
+            { icon: Trophy, title: 'Hackathons', desc: 'Compete and win prizes' },
+            { icon: Award, title: 'Portfolio Building', desc: 'Showcase your work professionally' },
+            { icon: Star, title: 'Certifications', desc: 'Earn badges and credentials' },
+            { icon: Heart, title: 'Community', desc: 'Network with like-minded developers' },
+          ].map((benefit, index) => {
+            const Icon = benefit.icon
+            return (
+              <div
+                key={index}
+                className="card text-center hover:scale-105 transition-all duration-300 group cursor-pointer"
+                onClick={playKeyClick}
+              >
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="text-accent-orange" size={32} />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-glow-orange">{benefit.title}</h3>
+                <p className="text-text-medium text-sm">{benefit.desc}</p>
+              </div>
+            )
+          })}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/auth/signup"
+            onClick={playKeyClick}
+            className="btn-primary inline-flex items-center space-x-2 group"
+          >
+            <span>Join as Developer</span>
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Why Partner with DevHub - For Companies */}
+      <section className="section-container">
+        <div className="section-header">
+          <h2 className="section-title">Why Partner with DevHub?</h2>
+          <p className="section-subtitle">
+            Connect with top talent and drive innovation
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {[
+            { icon: Users, title: 'Hire UIU Developers', desc: 'Browse and search talented developers' },
+            { icon: Briefcase, title: 'Paid Projects', desc: 'Post projects and get quality work' },
+            { icon: GraduationCap, title: 'Offer Internships', desc: 'Find the perfect interns' },
+            { icon: Trophy, title: 'Sponsor Hackathons', desc: 'Support innovation and talent' },
+            { icon: Target, title: 'Research Collaboration', desc: 'Partner on cutting-edge research' },
+          ].map((feature, index) => {
+            const Icon = feature.icon
+            return (
+              <div
+                key={index}
+                className="card text-center hover:scale-105 transition-all duration-300 group cursor-pointer"
+                onClick={playKeyClick}
+              >
+                <div className="mb-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="text-accent-blue" size={32} />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-glow-orange">{feature.title}</h3>
+                <p className="text-text-medium text-sm">{feature.desc}</p>
+              </div>
+            )
+          })}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/contact"
+            onClick={playKeyClick}
+            className="btn-secondary inline-flex items-center space-x-2 group"
+          >
+            <Building2 size={20} />
+            <span>Partner with Us</span>
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured Projects & Success Stories */}
+      <section className="section-container bg-white/30">
+        <div className="section-header">
+          <h2 className="section-title">Featured Projects & Success Stories</h2>
+          <p className="section-subtitle">
+            See what our community has built together
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'E-Commerce Platform',
+              description: 'A full-stack e-commerce solution built by 5 developers',
+              tech: ['React', 'Node.js', 'MongoDB'],
+              stars: 234,
+              contributors: 5,
+              status: 'Live',
+            },
+            {
+              title: 'AI Chatbot Assistant',
+              description: 'Intelligent chatbot for student support using ML',
+              tech: ['Python', 'TensorFlow', 'Flask'],
+              stars: 189,
+              contributors: 3,
+              status: 'Active',
+            },
+            {
+              title: 'Campus Navigation App',
+              description: 'Mobile app for navigating UIU campus with AR features',
+              tech: ['React Native', 'ARCore', 'Firebase'],
+              stars: 156,
+              contributors: 4,
+              status: 'Live',
+            },
+            {
+              title: 'Student Management System',
+              description: 'Comprehensive system for managing student data',
+              tech: ['Vue.js', 'Laravel', 'MySQL'],
+              stars: 98,
+              contributors: 6,
+              status: 'Active',
+            },
+            {
+              title: 'Blockchain Voting System',
+              description: 'Secure voting platform using blockchain technology',
+              tech: ['Solidity', 'Web3', 'React'],
+              stars: 312,
+              contributors: 4,
+              status: 'Live',
+            },
+            {
+              title: 'Health Monitoring Dashboard',
+              description: 'Real-time health data visualization and analytics',
+              tech: ['Next.js', 'D3.js', 'PostgreSQL'],
+              stars: 145,
+              contributors: 3,
+              status: 'Active',
+            },
+          ].map((project, index) => (
+            <div
+              key={index}
+              className="card hover:scale-105 transition-all duration-300 cursor-pointer group"
+              onClick={playKeyClick}
+            >
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-bold text-glow-orange group-hover:text-accent-orange transition-colors">
+                  {project.title}
+                </h3>
+                <span className="px-2 py-1 text-xs rounded-full bg-accent-green/20 text-accent-green font-semibold">
+                  {project.status}
+                </span>
+              </div>
+              <p className="text-text-medium text-sm mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-1 text-xs rounded bg-accent-blue/10 text-accent-blue font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center justify-between text-sm text-text-light">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    <Star size={16} className="text-accent-orange" />
+                    <span>{project.stars}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Users size={16} className="text-accent-blue" />
+                    <span>{project.contributors}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Github size={16} />
+                  <ExternalLink size={16} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/dashboard/tasks"
+            onClick={playKeyClick}
+            className="btn-primary inline-flex items-center space-x-2 group"
+          >
+            <span>View All Projects</span>
+            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="section-container">
+        <div className="section-header">
+          <h2 className="section-title">Events & Achievements Gallery</h2>
+          <p className="section-subtitle">
+            Capturing moments from our community events and milestones
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {Array.from({ length: 12 }).map((_, index) => (
+            <div
+              key={index}
+              className="card p-0 overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group"
+              onClick={playKeyClick}
+            >
+              <div className="aspect-square bg-gradient-to-br from-accent-orange/20 via-accent-blue/20 to-accent-purple/20 flex items-center justify-center relative">
+                <Camera className="text-accent-orange/50 group-hover:text-accent-orange transition-colors" size={32} />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
+                    Event {index + 1}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <p className="text-text-medium mb-4">
+            More photos coming soon from our upcoming events!
+          </p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="section-container bg-white/30">
         <div className="section-header">
           <h2 className="section-title">About Us</h2>
           <p className="section-subtitle">

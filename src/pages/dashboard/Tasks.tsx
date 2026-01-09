@@ -21,6 +21,12 @@ import {
   ChevronDown,
   Edit2,
   X,
+  Upload,
+  Download,
+  History,
+  File,
+  Folder,
+  GitBranch,
 } from 'lucide-react'
 
 interface Project {
@@ -260,7 +266,7 @@ export default function Tasks() {
   const [tasks, setTasks] = useState<Task[]>(mockTasks)
   const [projects] = useState<Project[]>(mockProjects)
   const [selectedProject, setSelectedProject] = useState<string>(projects[0]?.id || '')
-  const [view, setView] = useState<'board' | 'list' | 'backlog'>('board')
+  const [view, setView] = useState<'board' | 'list' | 'backlog' | 'files'>('board')
   const [selectedSprint, setSelectedSprint] = useState<string>('Sprint 1')
   const [editingTask, setEditingTask] = useState<{ taskId: string; field: 'priority' | 'status' } | null>(null)
 
@@ -414,6 +420,20 @@ export default function Tasks() {
         >
           <List size={18} />
           <span>Backlog</span>
+        </button>
+        <button
+          onClick={() => {
+            setView('files')
+            playKeyClick()
+          }}
+          className={`px-4 py-2 rounded-lg font-medium transition-all flex items-center space-x-2 ${
+            view === 'files'
+              ? 'bg-accent-orange text-white'
+              : 'bg-white text-text-medium hover:bg-primary-soft border border-accent-blue/20'
+          }`}
+        >
+          <Folder size={18} />
+          <span>Files & History</span>
         </button>
       </div>
 
@@ -777,6 +797,129 @@ export default function Tasks() {
             {projectTasks.filter((task) => !task.sprint).length === 0 && (
               <div className="text-center py-12 text-text-medium">No items in backlog</div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Files & Version History View */}
+      {view === 'files' && (
+        <div className="space-y-6">
+          {/* File Upload Section */}
+          <div className="card">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-glow-orange flex items-center gap-2">
+                <Folder size={24} />
+                Project Files
+              </h2>
+              <button
+                onClick={playKeyClick}
+                className="btn-primary flex items-center gap-2"
+              >
+                <Upload size={18} />
+                Upload File
+              </button>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { name: 'design-mockups.fig', size: '2.4 MB', type: 'design', updated: '2024-03-10', author: 'Sara Ahmed' },
+                { name: 'api-documentation.pdf', size: '1.8 MB', type: 'document', updated: '2024-03-09', author: 'John Doe' },
+                { name: 'database-schema.sql', size: '456 KB', type: 'code', updated: '2024-03-08', author: 'Mahmud Hasan' },
+                { name: 'project-proposal.docx', size: '892 KB', type: 'document', updated: '2024-03-07', author: 'Fatima Khan' },
+                { name: 'logo-assets.zip', size: '3.2 MB', type: 'assets', updated: '2024-03-06', author: 'Sajid Ahmed' },
+                { name: 'test-results.xlsx', size: '234 KB', type: 'data', updated: '2024-03-05', author: 'Nadia Chowdhury' },
+              ].map((file, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg border border-accent-blue/20 hover:border-accent-orange/40 transition-colors cursor-pointer"
+                  onClick={playKeyClick}
+                >
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center">
+                      <File className="text-accent-blue" size={20} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-text-dark truncate">{file.name}</h3>
+                      <p className="text-sm text-text-light">{file.size}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-xs text-text-medium">
+                    <span>{new Date(file.updated).toLocaleDateString()}</span>
+                    <div className="flex items-center gap-2">
+                      <button className="text-accent-blue hover:text-accent-orange">
+                        <Download size={14} />
+                      </button>
+                      <button className="text-accent-blue hover:text-accent-orange">
+                        <History size={14} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Version History Section */}
+          <div className="card">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-glow-orange flex items-center gap-2">
+                <GitBranch size={24} />
+                Version History
+              </h2>
+              <button
+                onClick={playKeyClick}
+                className="btn-secondary flex items-center gap-2"
+              >
+                <GitBranch size={18} />
+                View All Versions
+              </button>
+            </div>
+            <div className="space-y-4">
+              {[
+                { version: 'v2.1.0', author: 'Sara Ahmed', date: '2024-03-10', changes: 'Added new authentication features', files: 12 },
+                { version: 'v2.0.5', author: 'John Doe', date: '2024-03-08', changes: 'Fixed bug in user dashboard', files: 5 },
+                { version: 'v2.0.4', author: 'Mahmud Hasan', date: '2024-03-05', changes: 'Updated API endpoints', files: 8 },
+                { version: 'v2.0.3', author: 'Fatima Khan', date: '2024-03-03', changes: 'Improved UI components', files: 15 },
+                { version: 'v2.0.2', author: 'Sajid Ahmed', date: '2024-03-01', changes: 'Initial release of v2.0', files: 45 },
+              ].map((version, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg border border-accent-blue/20 hover:border-accent-orange/40 transition-colors"
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-bold text-text-dark">{version.version}</h3>
+                        <span className="px-2 py-1 text-xs rounded-full bg-accent-green/20 text-accent-green font-semibold">
+                          Stable
+                        </span>
+                      </div>
+                      <p className="text-sm text-text-medium">{version.changes}</p>
+                    </div>
+                    <button
+                      onClick={playKeyClick}
+                      className="btn-secondary text-sm flex items-center gap-1"
+                    >
+                      <History size={14} />
+                      View
+                    </button>
+                  </div>
+                  <div className="flex items-center gap-4 text-xs text-text-light mt-3 pt-3 border-t border-accent-blue/10">
+                    <div className="flex items-center gap-1">
+                      <User size={14} />
+                      {version.author}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Calendar size={14} />
+                      {new Date(version.date).toLocaleDateString()}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <File size={14} />
+                      {version.files} files changed
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

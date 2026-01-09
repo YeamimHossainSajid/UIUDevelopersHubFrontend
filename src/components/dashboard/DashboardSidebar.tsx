@@ -12,6 +12,10 @@ import {
   Shield,
   Menu,
   X,
+  Briefcase,
+  BookOpen,
+  GraduationCap,
+  Trophy,
 } from 'lucide-react'
 import { useState } from 'react'
 
@@ -27,6 +31,10 @@ export default function DashboardSidebar() {
     { path: '/dashboard/messages', label: 'Messages', icon: MessageCircle },
     { path: '/dashboard/meetings', label: 'Meetings', icon: Video },
     { path: '/dashboard/tasks', label: 'Tasks', icon: CheckSquare },
+    { path: '/dashboard/hiring', label: 'Hiring & Jobs', icon: Briefcase },
+    { path: '/dashboard/learning', label: 'Learning Hub', icon: BookOpen },
+    { path: '/dashboard/mentorship', label: 'Mentorship', icon: GraduationCap },
+    { path: '/dashboard/challenges', label: 'Challenges', icon: Trophy },
     { path: '/dashboard/profile', label: 'Profile', icon: User },
     { path: '/dashboard/settings', label: 'Settings', icon: Settings },
   ]

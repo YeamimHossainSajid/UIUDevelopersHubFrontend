@@ -22,6 +22,10 @@ import Meetings from './pages/dashboard/Meetings'
 import Tasks from './pages/dashboard/Tasks'
 import Profile from './pages/dashboard/Profile'
 import Settings from './pages/dashboard/Settings'
+import Hiring from './pages/dashboard/Hiring'
+import Learning from './pages/dashboard/Learning'
+import Mentorship from './pages/dashboard/Mentorship'
+import Challenges from './pages/dashboard/Challenges'
 import AdminRoles from './pages/dashboard/admin/Roles'
 
 // Layouts
@@ -60,6 +64,10 @@ function App() {
               <Route path="messages" element={<Messages />} />
               <Route path="meetings" element={<Meetings />} />
               <Route path="tasks" element={<Tasks />} />
+              <Route path="hiring" element={<Hiring />} />
+              <Route path="learning" element={<Learning />} />
+              <Route path="mentorship" element={<Mentorship />} />
+              <Route path="challenges" element={<Challenges />} />
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
               <Route path="admin/roles" element={<AdminRoles />} />
