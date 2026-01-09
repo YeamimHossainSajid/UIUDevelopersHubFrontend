@@ -121,22 +121,28 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-container bg-white/50">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <section className="section-container bg-gradient-to-b from-transparent to-white/30">
+        <div className="section-header">
+          <h2 className="section-title">Our Impact</h2>
+          <p className="section-subtitle">
+            Growing together, achieving milestones
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-accent-blue/20 hover:border-accent-orange/40 transition-all hover:scale-105"
+                className="card text-center hover:scale-105 transition-all duration-300 group"
               >
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-orange/20">
-                    <Icon className="text-accent-orange" size={28} />
+                <div className="flex justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-orange/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Icon className="text-accent-orange" size={32} />
                   </div>
                 </div>
                 <div className="text-4xl font-bold text-glow-orange mb-2">{stat.number}</div>
-                <div className="text-text-medium font-medium">{stat.label}</div>
+                <div className="text-text-medium font-semibold">{stat.label}</div>
               </div>
             )
           })}
@@ -144,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* What is UIU DevHub Section */}
-      <section className="section-container">
+      <section className="section-container bg-white/40">
         <div className="section-header">
           <h2 className="section-title">What is UIU DevHub?</h2>
           <p className="section-subtitle">
@@ -152,7 +158,7 @@ export default function Home() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
-          <div className="card p-8 bg-gradient-to-br from-accent-blue/10 via-accent-purple/10 to-accent-pink/10 border-2 border-accent-blue/30">
+          <div className="card p-8 bg-gradient-to-br from-accent-blue/10 via-accent-purple/10 to-accent-pink/10 border-2 border-accent-blue/30 hover:border-accent-orange/40 transition-colors">
             <p className="text-lg text-text-dark leading-relaxed text-center">
               UIU DevHub is a vibrant ecosystem designed to bridge the gap between talented developers at UIU and real-world opportunities. 
               We provide a platform where developers can showcase their skills, collaborate on projects, find internships and jobs, 
@@ -164,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Why Join DevHub - For Developers */}
-      <section className="section-container bg-white/30">
+      <section className="section-container bg-gradient-to-b from-white/40 to-white/20">
         <div className="section-header">
           <h2 className="section-title">Why Join DevHub?</h2>
           <p className="section-subtitle">
@@ -190,7 +196,7 @@ export default function Home() {
                 onClick={playKeyClick}
               >
                 <div className="mb-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
                     <Icon className="text-accent-orange" size={32} />
                   </div>
                 </div>
@@ -213,7 +219,7 @@ export default function Home() {
       </section>
 
       {/* Why Partner with DevHub - For Companies */}
-      <section className="section-container">
+      <section className="section-container bg-white/40">
         <div className="section-header">
           <h2 className="section-title">Why Partner with DevHub?</h2>
           <p className="section-subtitle">
@@ -236,7 +242,7 @@ export default function Home() {
                 onClick={playKeyClick}
               >
                 <div className="mb-4">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center group-hover:scale-110 transition-transform shadow-md">
                     <Icon className="text-accent-blue" size={32} />
                   </div>
                 </div>
@@ -260,17 +266,17 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="section-container bg-white/30">
+      <section className="section-container bg-gradient-to-b from-white/40 to-white/20">
         <div className="section-header">
           <h2 className="section-title">About Us</h2>
           <p className="section-subtitle">
             A community-driven platform for developers at UIU to collaborate, learn, and grow together.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="card text-center hover:scale-105 transition-transform">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="card text-center hover:scale-105 transition-all duration-300">
             <div className="mb-4">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center shadow-lg">
                 <Rocket className="text-white" size={32} />
               </div>
             </div>
@@ -279,9 +285,9 @@ export default function Home() {
               To empower developers through collaboration, knowledge sharing, and community building.
             </p>
           </div>
-          <div className="card text-center hover:scale-105 transition-transform">
+          <div className="card text-center hover:scale-105 transition-all duration-300">
             <div className="mb-4">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange to-accent-orange-gold flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-orange to-accent-orange-gold flex items-center justify-center shadow-lg">
                 <Sparkles className="text-white" size={32} />
               </div>
             </div>
@@ -290,9 +296,9 @@ export default function Home() {
               To become the leading developer community platform at UIU and beyond.
             </p>
           </div>
-          <div className="card text-center hover:scale-105 transition-transform">
+          <div className="card text-center hover:scale-105 transition-all duration-300">
             <div className="mb-4">
-              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-purple to-accent-pink flex items-center justify-center">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-accent-purple to-accent-pink flex items-center justify-center shadow-lg">
                 <Code className="text-white" size={32} />
               </div>
             </div>
@@ -305,7 +311,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="section-container bg-white/30">
+      <section className="section-container bg-white/40">
         <div className="section-header">
           <h2 className="section-title">Platform Features</h2>
           <p className="section-subtitle">
@@ -318,7 +324,7 @@ export default function Home() {
             return (
               <div
                 key={index}
-                className="card cursor-pointer group"
+                className="card cursor-pointer group hover:scale-105 transition-all duration-300"
                 onMouseEnter={() => playFeatureSound(440 + index * 50)}
                 onClick={playKeyClick}
               >
